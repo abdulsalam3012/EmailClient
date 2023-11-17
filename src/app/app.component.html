@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-color">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarCenteredExample"
+            aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+            <!-- Left links -->
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <ng-container *ngIf="isUserSignedIn$ | async">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" routerLinkActive="active" routerLink="/inbox">Inbox</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" routerLinkActive="active"  routerLink="/signout">SignOut</a>
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="!(isUserSignedIn$ | async)">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="javascript:void(0)" routerLinkActive="active" routerLink="/signin"
+                            [routerLinkActiveOptions]="{exact:true}">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" routerLinkActive="active"
+                            routerLink="/signup">Sign Up</a>
+                    </li>
+                </ng-container>
+            </ul>
+            <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,33 @@
+<label class="form-label">{{label}}</label>
+<input *ngIf="inputControlType === 'input'" [type]="inputType" class="form-control" [placeholder]="placeholder" [formControl]="control"
+    [class.is-invalid]="control.invalid && (control.dirty || control.touched)">
+
+<textarea *ngIf="inputControlType === 'textarea'" class="form-control" [placeholder]="placeholder" [formControl]="control"
+    [class.is-invalid]="control.invalid && (control.dirty || control.touched)"></textarea>
+
+<div *ngIf="control.invalid && (control.dirty || control.touched)" class="invalid-feedback">
+    <div *ngIf="control.errors?.['required']">
+        This field is required.
+    </div>
+    <div *ngIf="control.errors?.['minlength']">
+        This field must have at least {{control.errors.minlength.requiredLength}} character.
+    </div>
+    <div *ngIf="control.errors?.['maxlength']">
+        This field must have at most {{control.errors.maxlength.requiredLength}} characters.
+    </div>
+    <div *ngIf="control.errors?.['pattern']">
+        Invalid Pattern
+    </div>
+    <div *ngIf="control.errors?.['nonUniqueUserName']">
+        UserName is Taken
+    </div>
+    <div *ngIf="control.errors?.['onConnection']">
+        Can't tell if username is taken
+    </div>
+    <div *ngIf="control.errors?.['passwordDontMatch']">
+        Password Not Match
+    </div>
+    <div *ngIf="control.errors?.['email']">
+        Enter the Valid Email
+    </div>
+</div>

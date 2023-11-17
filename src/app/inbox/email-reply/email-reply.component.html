@@ -1,0 +1,11 @@
+<div class="container mt-4">
+    <div class="row">
+      <button class="btn btn-outline-primary" (click)="composeEmail()">Replay</button>
+    </div>
+  </div>
+  <app-modal [isShowModal]="isComposeEmail">
+    <h3 modalTitle>Replay</h3>
+    <app-email-form [email]="specificEmail" (newEmail)="onSubmit($event)"></app-email-form>
+    <div modalFooter>
+    </div>
+  </app-modal>

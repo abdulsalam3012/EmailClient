@@ -1,0 +1,16 @@
+<div class="modal fade in" tabindex="-1"  [style.display]="isShowModal ? 'block' : 'none'" [ngClass]="isShowModal? 'show bg-color modal-animation ':'modal-animationout'">
+  <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+          <div class="modal-header">
+              <ng-content select="[modalTitle]"></ng-content>
+              <button type="button" class="btn-close" (click)="onDismissClick()"></button>
+          </div>
+          <div class="modal-body">  
+          <ng-content></ng-content>
+          </div>
+          <div class="modal-footer">
+              <ng-content select="[modalFooter]"></ng-content>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+a {
+    text-decoration: none;
+    color: #000;
+}
+a.active {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    background-color: #cfe2ff;
+    border-radius: 5px;
+}
+a.active:before {
+    content: '>';
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+.contect{
+    width: 90%;
+}
+.trim{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}

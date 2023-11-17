@@ -1,0 +1,36 @@
+<div class="container">
+    <form [formGroup]="emailForm" >
+        <div class="row">
+            <div class="form-group">
+                <div class="mb-3">
+                    <app-input inputType="email" [control]="$any(emailForm.controls['to'])" label="To"
+                        placeholder="Enter Your Email"></app-input>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="mb-3">
+                    <app-input inputType="email" [control]="$any(emailForm.controls['from'])" label="From"
+                        placeholder="Enter Password"></app-input>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="mb-3">
+                    <app-input inputType="text" [control]="$any(emailForm.controls['subject'])" label="Subject"
+                        placeholder="Write your Subject"></app-input>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="mb-3">
+                    <app-input inputControlType="textarea" [control]="$any(emailForm.controls['text'])" label="Text"
+                        placeholder="Write your Content"></app-input>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="emailForm.errors" class="text-danger">
+            <p *ngIf="emailForm.errors.credentials">
+              Invalid username or password
+            </p>
+          </div>
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+    </form>
+</div>
